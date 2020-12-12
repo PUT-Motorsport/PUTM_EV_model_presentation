@@ -21,7 +21,7 @@ class URDFManipulator extends URDFViewer {
     get disableDragging() { return this.hasAttribute('disable-dragging'); }
     set disableDragging(val) { val ? this.setAttribute('disable-dragging', !!val) : this.removeAttribute('disable-dragging'); }
 
-    get highlightColor() { return this.getAttribute('highlight-color') || '#FFFFFF'; }
+    get highlightColor() { return this.getAttribute('highlight-color'); }
     set highlightColor(val) { val ? this.setAttribute('highlight-color', val) : this.removeAttribute('highlight-color'); }
 
     constructor(...args) {
@@ -34,7 +34,7 @@ class URDFManipulator extends URDFViewer {
                 shininess: 10,
                 color: this.highlightColor,
                 emissive: this.highlightColor,
-                emissiveIntensity: 0.25,
+                emissiveIntensity: 0.001,
             });
 
         const el = this.renderer.domElement;
@@ -77,7 +77,7 @@ class URDFManipulator extends URDFViewer {
 
         const isJoint = j => {
 
-            return j.isURDFJoint && j.jointType !== 'fixed';
+            return j.isURDFJoint;
 
         };
 
@@ -298,10 +298,30 @@ class URDFManipulator extends URDFViewer {
 
                 }
 
+                var elem = document.getElementById('infos');
+
                 if (hovered) {
 
                     highlightLinkGeometry(hovered, false);
                     this.dispatchEvent(new CustomEvent('joint-mouseover', { bubbles: true, cancelable: true, detail: hovered.name }));
+
+                    var name = hovered.name;
+
+                    if (name === 'base_link_to_kolo_areo') {
+                        elem.innerHTML = '<h1>To jest areo</h1>';
+                    } else if (name === 'base_link_to_kolo_box') {
+                        elem.innerHTML = '<h1>To jest electrobox</h1>';
+                    } else if (name.includes('wheel') || name.includes('kolo')) {
+                        if (name.includes('steer')) {
+                            elem.innerHTML = '<h1>Śmiało, zakręć ;)</h1>';
+                        } else {
+                            elem.innerHTML = '<h1>To jest podwozie</h1>';
+                        }
+
+                    }
+
+                } else {
+                    elem.innerHTML = '<h1>EWarta:</h1><ul><li>szybka jak brzytwa</li><li>ostra jak przecinak</li><li>taka średnia w sumie</li></ul>';
 
                 }
 
@@ -329,7 +349,11 @@ class URDFManipulator extends URDFViewer {
 
                 if (delta) {
 
-                    this.setAngle(dragging.name, dragging.angle + delta);
+                    if (dragging.name.includes('wheel')) {
+                        this.setAngle('base_link_to_wheel_front_left', dragging.angle + delta);
+                        this.setAngle('base_link_to_wheel_front_right', dragging.angle + delta);
+                        this.setAngle('base_link_wheel_steer', dragging.angle + delta);
+                    }
 
                 }
 

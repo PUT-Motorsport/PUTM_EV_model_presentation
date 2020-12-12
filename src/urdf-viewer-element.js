@@ -97,7 +97,7 @@ class URDFViewer extends HTMLElement {
         renderer.gammaOutput = true;
 
         // Camera setup
-        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(16, 1, 0.1, 1000);
         camera.position.z = -10;
 
         // World setup

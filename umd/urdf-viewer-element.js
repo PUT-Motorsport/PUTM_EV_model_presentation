@@ -2535,7 +2535,7 @@
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       renderer.gammaOutput = true; // Camera setup
 
-      var camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+      var camera = new THREE.PerspectiveCamera(16, 1, 0.1, 1000);
       camera.position.z = -10; // World setup
 
       var world = new THREE.Object3D();

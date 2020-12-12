@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="DEWarta">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="1.1218 -1.0138 -3.1419E-06" rpy="0 0 0" />
+      <mass value="80809" />
+      <inertia ixx="53762" ixy="0.10779" ixz="0.080518" iyy="194890" iyz="4.0047E-05" izz="194890" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/base.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.2 0.2 0.2 1" />
+      </material>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="1.57 0 0" />
+        <geometry>
+          <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/base.stl" />
+        </geometry>
+      </collision>
+
+    </visual>
+
+  </link>
+  <link name="wheel_front_left">
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/wheel.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/wheel.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </collision>
+  </link>
+
+  <link name="wheel_front_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/wheel.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/wheel.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </collision>
+  </link>
+
+  <link name="w_heel_back_left">
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/wheel.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/wheel.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </collision>
+  </link>
+
+  <link name="w_heel_back_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/wheel.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/wheel.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </collision>
+  </link>
+
+  <link name="areo">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/areo.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.219 0.458 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/areo.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.219 0.458 1" />
+      </material>
+    </collision>
+  </link>
+
+  <link name="box">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/box.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="1.0 0.647 0.0 1" />
+      </material>
+    </visual>
+    <origin xyz="0 0 0" rpy="1.57 0 0" />
+    <geometry>
+      <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/box.stl" />
+    </geometry>
+    <material name="">
+      <color rgba="1.0 0.647 0.0 1" />
+    </material>
+  </link>
+
+  <link name="steer">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 1.57 0" />
+      <geometry>
+        <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/steer2.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <origin xyz="0 0 0" rpy="1.57 0 0" />
+    <geometry>
+      <mesh filename="package://PUTM_EV_model_presentation/urdf/DEWarta/meshes/steer2.stl" />
+    </geometry>
+    <material name="">
+      <color rgba="0.75 0.75 0.75 1" />
+    </material>
+  </link>
+
+  <joint name="base_link_to_wheel_front_left" type="revolute">
+    <origin xyz="0 -0.557 0.249" rpy="0.0 0.0 0.0" />
+    <parent link="base_link" />
+    <child link="wheel_front_left" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.3" upper="0.3" effort="0" velocity="1" />
+  </joint>
+
+  <joint name="base_link_to_wheel_front_right" type="revolute">
+    <origin xyz="0 0.557 0.249" rpy="0.0 0.0 3.14" />
+    <parent link="base_link" />
+    <child link="wheel_front_right" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.3" upper="0.3" effort="0" velocity="1" />
+  </joint>
+
+  <joint name="base_link_to_kolo_tyl_left" type="fixed">
+    <origin xyz="1.55 -0.557 0.249" rpy="0.0 0.0 0" />
+    <parent link="base_link" />
+    <child link="w_heel_back_left" />
+    <axis xyz="0 0 1" />
+
+  </joint>
+
+  <joint name="base_link_to_kolo_tyl_right" type="fixed">
+    <origin xyz="1.55 0.557 0.249" rpy="0.0 0.0 3.14" />
+    <parent link="base_link" />
+    <child link="w_heel_back_right" />
+    <axis xyz="0 0 1" />
+
+  </joint>
+
+  <joint name="base_link_to_kolo_areo" type="fixed">
+    <origin xyz="0.00 0.00 0.00" rpy="0.0 0.0 0.0" />
+    <parent link="base_link" />
+    <child link="areo" />
+    <axis xyz="0 0 1" />
+
+  </joint>
+
+  <joint name="base_link_to_kolo_box" type="fixed">
+    <origin xyz="0.00 0.00 0.00" rpy="0.0 0.0 0.0" />
+    <parent link="base_link" />
+    <child link="box" />
+    <axis xyz="0 0 1" />
+
+  </joint>
+
+  <joint name="base_link_wheel_steer" type="revolute">
+    <origin xyz="0.3 0 0.5" rpy="0.0 0.0 0.0" />
+    <parent link="base_link" />
+    <child link="steer" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.3" upper="0.3" effort="0" velocity="1" />
+
+  </joint>
+</robot>

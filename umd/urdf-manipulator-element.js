@@ -2535,7 +2535,7 @@
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       renderer.gammaOutput = true; // Camera setup
 
-      var camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+      var camera = new THREE.PerspectiveCamera(16, 1, 0.1, 1000);
       camera.position.z = -10; // World setup
 
       var world = new THREE.Object3D();
@@ -2986,7 +2986,7 @@
     }, {
       key: "highlightColor",
       get: function get() {
-        return this.getAttribute('highlight-color') || '#FFFFFF';
+        return this.getAttribute('highlight-color');
       },
       set: function set(val) {
         val ? this.setAttribute('highlight-color', val) : this.removeAttribute('highlight-color');
@@ -3015,7 +3015,7 @@
         shininess: 10,
         color: _this.highlightColor,
         emissive: _this.highlightColor,
-        emissiveIntensity: 0.25
+        emissiveIntensity: 0.001
       });
       var el = _this.renderer.domElement; // Saved mouse data between frames and initial
       // click point in space
@@ -3050,7 +3050,7 @@
       };
 
       var isJoint = function isJoint(j) {
-        return j.isURDFJoint && j.jointType !== 'fixed';
+        return j.isURDFJoint;
       }; // Find the nearest parent that is a joint
 
 
@@ -3218,6 +3218,8 @@
             }));
           }
 
+          var elem = document.getElementById('infos');
+
           if (hovered) {
             highlightLinkGeometry(hovered, false);
 
@@ -3226,6 +3228,22 @@
               cancelable: true,
               detail: hovered.name
             }));
+
+            var name = hovered.name;
+
+            if (name === 'base_link_to_kolo_areo') {
+              elem.innerHTML = '<h1>To jest areo</h1>';
+            } else if (name === 'base_link_to_kolo_box') {
+              elem.innerHTML = '<h1>To jest electrobox</h1>';
+            } else if (name.includes('wheel') || name.includes('kolo')) {
+              if (name.includes('steer')) {
+                elem.innerHTML = '<h1>Śmiało, zakręć ;)</h1>';
+              } else {
+                elem.innerHTML = '<h1>To jest podwozie</h1>';
+              }
+            }
+          } else {
+            elem.innerHTML = '<h1>EWarta:</h1><ul><li>szybka jak brzytwa</li><li>ostra jak przecinak</li><li>taka średnia w sumie</li></ul>';
           }
 
           _this.redraw();
@@ -3243,7 +3261,13 @@
           }
 
           if (_delta) {
-            _this.setAngle(dragging.name, dragging.angle + _delta);
+            if (dragging.name.includes('wheel')) {
+              _this.setAngle('base_link_to_wheel_front_left', dragging.angle + _delta);
+
+              _this.setAngle('base_link_to_wheel_front_right', dragging.angle + _delta);
+
+              _this.setAngle('base_link_wheel_steer', dragging.angle + _delta);
+            }
           }
         }
 

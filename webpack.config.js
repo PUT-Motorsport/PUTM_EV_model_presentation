@@ -13,6 +13,15 @@ module.exports = {
         }, {
             test: /\.js$/,
             use: [{ loader: 'script-loader' }]
-        }]
+        },
+        {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              publicPath: 'images/'
+            }
+          }
+    ]
     }
 }

@@ -9,7 +9,7 @@ html, body, urdf-viewer {
 body {
     font-family: "Roboto", helvetica, arial, sans-serif;
     animation: fade 3s ease;
-    color: white;
+    color: black;
     user-select: none;
 }
 
@@ -17,7 +17,7 @@ select {
     font-family: "Roboto", helvetica, arial, sans-serif;
     background: rgba(255,255,255,0.25);
     border: none;
-    color: white;
+    color: black;
     font-size: 16px;
     font-weight: 300;
     outline: none;
@@ -29,7 +29,7 @@ option {
 }
 
 input[type="number"] {
-    color: white;
+    color: black;
     border: none;
     font-weight: 300;
     background: rgba(255,255,255,0.25);
@@ -54,7 +54,7 @@ input[type=range] {
 input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 1px;
-    background: white;
+    background: black;
     border: none;
     border-radius: 5px;
 }
@@ -64,20 +64,20 @@ input[type=range]::-webkit-slider-thumb {
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background: white;
+    background: black;
     margin-top: -5px;
 }
 input[type=range]:focus {
     outline: none;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-    background: white;
+    background: black;
 }
 
 input[type=range]::-moz-range-track {
     width: 100%;
     height: 1px;
-    background: white;
+    background: black;
     border: none;
     border-radius: 5px;
 }
@@ -86,18 +86,18 @@ input[type=range]::-moz-range-thumb {
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background: white;
+    background: black;
 }
 
 input[type=range]:-moz-focusring{
-    outline: 1px solid white;
+    outline: 1px solid black;
     outline-offset: -1px;
 }
 
 input[type=range]::-ms-track {
     width: 100%;
     height: 1px;
-    background: white;
+    background: black;
     border-radius: 10px;
     color: transparent;
     border: none;
@@ -107,7 +107,7 @@ input[type=range]::-ms-thumb {
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background: white;
+    background: black;
     border: none;
     outline: none;
     margin-top: 2px;
@@ -144,6 +144,24 @@ input:focus {
     opacity: 0.75;
 }
 
+#infos {
+    padding-left: 10px;
+    padding-bottom: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 15px 0;
+    transition: 0.5s opacity ease;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#infos li{
+    margin-left: 25px;
+    padding: 5px;
+    list-style-type: square;
+}
+
 #controls {
     flex: 1;
     display: flex;
@@ -162,7 +180,7 @@ input:focus {
     margin-bottom: 10px;
     text-align: right;
     transition: 0.1s opacity linear;
-    border-top: 1px solid white;
+    border-top: 1px solid black;
 }
 
 #controls #toggle-controls:hover {
@@ -242,7 +260,7 @@ input:focus {
     height: 15px;
 
     border-radius: 10px;
-    border: 2px solid white;
+    border: 2px solid black;
 
     margin-right: 5px;
 }
@@ -255,7 +273,7 @@ input:focus {
     position: absolute;
     left: 5px;
     top: 5px;
-    background: white;
+    background: black;
     border-radius: 10px;
     opacity: 0;
 }
