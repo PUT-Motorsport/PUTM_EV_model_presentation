@@ -204,7 +204,7 @@ document.addEventListener('WebComponentsReady', () => {
 
     document.querySelector('li[urdf]').dispatchEvent(new Event('click'));
 
-    if (/example\/build/i.test(window.location)) {
+    if (/build/i.test(window.location)) {
         viewer.package = '../../../urdf';
     }
 

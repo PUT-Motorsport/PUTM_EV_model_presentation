@@ -5,7 +5,7 @@
   "main": "umd/URDFLoader.js",
   "scripts": {
     "start": "concurrently --kill-others \"rollup -c -w\" \"static-server\"",
-    "build": "rollup -c && cd example && webpack",
+    "build": "rollup -c && webpack",
     "test": "rollup -c && jest",
     "lint": "eslint src/*.js ./test/*.js",
     "coverage": "nyc report --reporter=html & opn coverage/index.html"
@@ -13,9 +13,9 @@
   "files": [
     "src/*",
     "umd/*",
-    "example/index.js",
-    "example/dragAndDrop.js",
-    "example/styles.css"
+    "index.js",
+    "dragAndDrop.js",
+    "styles.css"
   ],
   "license": "Apache-2.0",
   "repository": {
