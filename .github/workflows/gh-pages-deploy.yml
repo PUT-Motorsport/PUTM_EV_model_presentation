@@ -1,0 +1,33 @@
+name: Build and Deploy
+on:
+    push:
+        branches:
+            - devel
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@master
+              with:
+                  persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+                  fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+            - name: Install and build
+              run: |
+                  npm install
+                  npm run build
+            - name: Commit files
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+                  git add --force node_modules/three/build
+                  git add --force node_modules/three/examples
+                  git add --force node_modules/threejs-model-loader
+                  git add --force node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js
+                  git add --force umd
+                  git commit -m "Add changes" -a
+            - name: Deploy 🚀
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: gh-pages
+                  force: true
