@@ -125,7 +125,7 @@ viewer.addEventListener('urdf-processed', () => {
             li.setAttribute('joint-type', joint.jointType);
             li.setAttribute('joint-name', joint.name);
 
-            // sliderList.appendChild(li);
+            sliderList.appendChild(li);
 
             // update the joint display
             const slider = li.querySelector('input[type="range"]');
