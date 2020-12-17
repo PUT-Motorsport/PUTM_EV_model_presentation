@@ -29,9 +29,9 @@
         <div class="loader-wrapper">Loading model... <br><div class="lds-hourglass"></div></div>
         
         <div id="menu">
-            <!-- <ul>
+            <ul>
                 <img src="./src/logo.png">
-            </ul> -->
+            </ul>
             <br />
             <ul id="urdf-options" hidden>
                 <li urdf="./urdf/DEWarta/urdf/DEWarta.urdf" color="#efefef" disable=True>Bolid DEWarta</li>
@@ -122,11 +122,8 @@
                 updateLoop();
                 viewer.camera.position.set(-5.5, 3.5, 5.5);
 
-            });
-        </script>
-        <script>
-            $(window).on("load", function(){
                 $(".loader-wrapper").fadeOut("slow");
+
             });
         </script>
     </body>
