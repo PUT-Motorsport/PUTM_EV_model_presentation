@@ -140,7 +140,7 @@ class URDFLoader {
                     : errors;
 
                 onComplete(model, partialErrors);
-                
+                document.getElementById('loader-wrapper').style.display = "none";
 
             }
 
