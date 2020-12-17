@@ -26,7 +26,7 @@
         <link href="styles.css" rel="stylesheet" />
     </head>
     <body tabindex="0">
-        <div class="loader-wrapper">Loading model <br><div class="lds-hourglass"></div></div>
+        <div id="loader-wrapper" name="openloader">Loading model <br><div class="lds-hourglass"></div></div>
         
         <div id="menu">
             <ul>
@@ -122,7 +122,7 @@
                 updateLoop();
                 viewer.camera.position.set(-5.5, 3.5, 5.5);
 
-                document.getElementsByClassName('loader-wrapper').setAttribute("hidden", true);
+                document.getElementById('loader-wrapper').setAttribute("hidden", true);
 
             });
         </script>
