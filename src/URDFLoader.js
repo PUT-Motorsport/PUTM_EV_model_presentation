@@ -280,8 +280,6 @@ class URDFLoader {
             obj.joints = jointMap;
             obj.links = linkMap;
 
-            document.getElementById('loader-wrapper').setAttribute("hidden", true);
-
             return obj;
 
         }
