@@ -140,6 +140,7 @@ class URDFLoader {
                     : errors;
 
                 onComplete(model, partialErrors);
+                
 
             }
 
