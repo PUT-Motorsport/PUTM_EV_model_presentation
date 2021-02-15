@@ -26,23 +26,32 @@
         <link href="styles.css" rel="stylesheet" />
     </head>
     <body tabindex="0">
-
-        <div hidden  id="menu">
+        <div id="loader-wrapper" name="openloader">Loading model <br><div class="lds-hourglass"></div></div>
+        
+        <div id="menu">
             <ul>
                 <img src="./src/logo.png">
             </ul>
-            <ul hidden id="urdf-options">
-                <li hidden urdf="./urdf/DEWarta/urdf/DEWarta.urdf" color="#efefef" disable=True>Bolid DEWarta</li>
+            <br />
+            <ul id="urdf-options" hidden>
+                <li urdf="./urdf/DEWarta/urdf/DEWarta.urdf" color="#efefef" disable=True>Bolid DEWarta</li>
             </ul>
-            <div id="infos">
-                <h1>EWarta:</h1><ul><li>szybka jak brzytwa</li><li>ostra jak przecinak</li><li>taka średnia w sumie</li></ul>
+            <div id="infos" hidden>
+                <h1>EWarta</h1>
+                <ul>
+                    <li>season 2019/2020</li>
+                    <li>the first electric racecar</li>
+                    <li>max speed: <strong>value</strong></li>
+                    <li>acceleration: <strong>value</strong></li>
+                    <li>battery life: <strong>value</strong></li>
+                </ul>
             </div>
 
-            <div id="controls" class="hidden" hidden>
+            <div id="controls">
                 <div hidden id="toggle-controls"></div>
-                <div hidden>Drag and drop a set of URDF files! <br/> (Chrome Only)</div>
-                <div hidden id="ignore-joint-limits" class="toggle">Ignore Joint Limits</div>
-                <div hidden id="do-animate" class="toggle checked">Animate Joints</div>
+                <div hidden class="hidden" id="ignore-joint-limits" class="toggle">Ignore Joint Limits</div>
+                <div hidden id="do-animate"  unchecked>Animate Joints</div>
+                <br/>
                 <label hidden>
                     Up Axis
                     <select id="up-select">
@@ -54,7 +63,7 @@
                         <option value="-Z">-Z</option>
                     </select>
                 </label>
-                <ul></ul>
+                <!-- <ul></ul> -->
             </div>
         </div>
         <urdf-viewer up="+Z" display-shadow tabindex="0"></urdf-viewer>
@@ -114,8 +123,8 @@
                 viewer.addEventListener('urdf-processed', e => updateAngles());
                 updateLoop();
                 viewer.camera.position.set(-5.5, 3.5, 5.5);
-
             });
+            
         </script>
     </body>
 </html>

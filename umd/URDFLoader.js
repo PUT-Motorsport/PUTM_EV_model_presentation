@@ -1968,6 +1968,7 @@
           if (onComplete) {
             var partialErrors = Object.keys(errors).length === 0 ? undefined : errors;
             onComplete(model, partialErrors);
+            document.getElementById('loader-wrapper').style.display = "none";
           }
 
           managerOnLoadDefault();

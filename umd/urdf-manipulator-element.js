@@ -1968,6 +1968,7 @@
           if (onComplete) {
             var partialErrors = Object.keys(errors).length === 0 ? undefined : errors;
             onComplete(model, partialErrors);
+            document.getElementById('loader-wrapper').style.display = "none";
           }
 
           managerOnLoadDefault();
@@ -3232,18 +3233,18 @@
             var name = hovered.name;
 
             if (name === 'base_link_to_kolo_areo') {
-              elem.innerHTML = '<h1>To jest areo</h1>';
+              elem.innerHTML = '<h1>EWarta - aerodynamics</h1>';
             } else if (name === 'base_link_to_kolo_box') {
-              elem.innerHTML = '<h1>To jest electrobox</h1>';
+              elem.innerHTML = '<h1>EWarta - low/high voltage</h1>';
             } else if (name.includes('wheel') || name.includes('kolo')) {
               if (name.includes('steer')) {
-                elem.innerHTML = '<h1>Śmiało, zakręć ;)</h1>';
+                elem.innerHTML = '<h1>Turn the steering wheel</h1>';
               } else {
-                elem.innerHTML = '<h1>To jest podwozie</h1>';
+                elem.innerHTML = '<h1>EWarta - chassis</h1>';
               }
             }
           } else {
-            elem.innerHTML = '<h1>EWarta:</h1><ul><li>szybka jak brzytwa</li><li>ostra jak przecinak</li><li>taka średnia w sumie</li></ul>';
+            elem.innerHTML = '<h1>EWarta</h1><ul><li>season 2019/2020</li><li>the first electric racecar</li><li>max speed: <strong>value</strong></li><li>acceleration: <strong>value</strong></li><li>battery life: <strong>value</strong></li></ul>';
           }
 
           _this.redraw();
